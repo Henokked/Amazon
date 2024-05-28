@@ -13,7 +13,6 @@ function ProductDetail() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`${productUrl}/products/${productId}`);
@@ -25,14 +24,14 @@ function ProductDetail() {
         setLoading(false);
       }
     };
-console.log("prodcutidd")
+
     fetchProduct();
   }, [productId]);
 
   if (loading) {
     return (
       <LayOut>
-        <div><Loader/></div>
+        <div><Loader /></div>
       </LayOut>
     );
   }
@@ -47,8 +46,8 @@ console.log("prodcutidd")
 
   return (
     <LayOut>
-      <ProductCard product={product} flex={true} renderDesc={true}/>
-      
+      <ProductCard product={product} flex={true} renderDesc={true} 
+      renderAdd={true}/>
     </LayOut>
   );
 }
