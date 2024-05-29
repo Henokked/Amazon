@@ -40,7 +40,7 @@ function ProductCard({ product, flex, renderDesc, renderAdd }) {
         {renderDesc && <div style={{ maxWidth: "500px" }}>{description}</div>}
       </div>
       <div className={classes.rating}>
-        {<Rating value={rating} precision={0.1} />}
+        <Rating value={rating.rate} precision={0.1} />
         <small>{rating.count}</small>
       </div>
       <div className={classes.pri}>
